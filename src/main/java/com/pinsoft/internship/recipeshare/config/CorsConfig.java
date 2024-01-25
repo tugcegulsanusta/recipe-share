@@ -15,7 +15,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.
                         addMapping("/**")
-                        .allowedOrigins("http://localhost:3000","http://localhost:8080","https://recipe-share-2wds.onrender.com")
+                        .allowedOrigins("http://localhost:3000","http://localhost:8080","https://recipe-share-jelj.onrender.com")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*");
             }
