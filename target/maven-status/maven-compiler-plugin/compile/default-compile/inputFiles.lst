@@ -1,5 +1,6 @@
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\RecipeController.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\entity\User.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\config\SecurityConfig.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\config\ApplicationConfig.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\RoleRepository.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\RecipeShareApplication.java
@@ -8,6 +9,8 @@ E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\re
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\AuthenticationResponse.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\UserRepository.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\RecipeRepository.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\config\JwtAuthenticationFilter.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\JwtService.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\RecipeService.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\RegisterRequest.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\RoleController.java

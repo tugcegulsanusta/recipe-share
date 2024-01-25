@@ -1,6 +1,5 @@
 HELP.md
-target/classes/
-target/**.jar.original
+
 
 ### STS ###
 .apt_generated
