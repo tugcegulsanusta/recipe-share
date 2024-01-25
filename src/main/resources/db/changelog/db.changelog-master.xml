@@ -79,7 +79,7 @@
             <column name="password" value="goktug"/>
         </insert>
     </changeSet>
-    <changeSet id="20240125-insert-user_account" author="Tuğçe Usta">
+    <changeSet id="20240125/2-insert-user_account" author="Tuğçe Usta">
         <insert tableName="user_account">
             <column name="id" value="3"/>
             <column name="email" value="user@user.com" />
