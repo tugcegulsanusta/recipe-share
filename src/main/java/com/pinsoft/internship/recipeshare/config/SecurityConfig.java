@@ -26,7 +26,7 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .requestMatchers("/swagger-ui/**","/v3/api-docs/**","/register","/authenticate","/orders")
+                .requestMatchers("/swagger-ui/**","/v3/api-docs/**","/register","/authenticate")
                 .permitAll()
                 .requestMatchers(HttpMethod.DELETE).hasAuthority("admin")
                 //.requestMatchers(HttpMethod.POST).hasAuthority("admin")

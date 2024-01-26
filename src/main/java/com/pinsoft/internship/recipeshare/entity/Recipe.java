@@ -14,12 +14,13 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name= "recipe")
+@Table(name= "recipe_table")
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String explanation;
 
     @OneToMany(mappedBy = "id")
     @JsonIgnore
