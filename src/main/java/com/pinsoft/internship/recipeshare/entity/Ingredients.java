@@ -16,4 +16,8 @@ public class Ingredients {
     private Long id;
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "recipe_id",referencedColumnName = "id")
+    private Recipe recipe;
+
 }

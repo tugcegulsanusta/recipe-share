@@ -21,4 +21,11 @@ public class Recipe {
     private Long id;
     private String name;
 
+    @OneToMany(mappedBy = "id")
+    @JsonIgnore
+    private Set <Ingredients> ingredients;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id",referencedColumnName = "id")
+    private Category category;
 }
