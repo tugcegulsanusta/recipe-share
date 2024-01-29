@@ -1,5 +1,6 @@
 package com.pinsoft.internship.recipeshare.service;
 
+import com.pinsoft.internship.recipeshare.dto.CreateRecipeRequest;
 import com.pinsoft.internship.recipeshare.entity.Category;
 import com.pinsoft.internship.recipeshare.entity.Recipe;
 import com.pinsoft.internship.recipeshare.repository.CategoryRepository;
@@ -14,8 +15,16 @@ import java.util.Optional;
 public class RecipeService {
     @Autowired
     RecipeRepository recipeRepository;
-
-    public Recipe add(Recipe recipe) {return recipeRepository.save(recipe);}
+    @Autowired
+    CategoryService categoryService;
+    public Recipe add(CreateRecipeRequest recipeRequest) {
+        Recipe recipe = new Recipe();
+        recipe.setName(recipeRequest.getName());
+        recipe.setExplanation(recipeRequest.getExplanation());
+        Category category = categoryService.getById(recipeRequest.getCategoryId()).get();
+        recipe.setCategory(category);
+        return recipeRepository.save(recipe);
+    }
     public void delete(Long id) {
         recipeRepository.deleteById(id);
     }

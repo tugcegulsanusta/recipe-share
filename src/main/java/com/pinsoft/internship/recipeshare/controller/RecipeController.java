@@ -1,5 +1,6 @@
 package com.pinsoft.internship.recipeshare.controller;
 
+import com.pinsoft.internship.recipeshare.dto.CreateRecipeRequest;
 import com.pinsoft.internship.recipeshare.entity.Ingredients;
 import com.pinsoft.internship.recipeshare.entity.Recipe;
 import com.pinsoft.internship.recipeshare.service.IngredientsService;
@@ -35,7 +36,7 @@ public class RecipeController {
 
     public void delete(@PathVariable Long id){recipeService.delete(id);}
     @PostMapping("/recipe")
-    public Recipe add(@RequestBody Recipe recipe){
-        return recipeService.add(recipe);
+    public Recipe add(@RequestBody CreateRecipeRequest recipeRequest){
+        return recipeService.add(recipeRequest);
     }
 }

@@ -1,4 +1,5 @@
 com\pinsoft\internship\recipeshare\config\CorsConfig$1.class
+com\pinsoft\internship\recipeshare\dto\CreateIngredientRequest.class
 com\pinsoft\internship\recipeshare\repository\IngredientsRepository.class
 com\pinsoft\internship\recipeshare\controller\IngredientsController.class
 com\pinsoft\internship\recipeshare\dto\AuthenticationResponse$AuthenticationResponseBuilder.class
@@ -11,6 +12,7 @@ com\pinsoft\internship\recipeshare\entity\User.class
 com\pinsoft\internship\recipeshare\controller\RoleController.class
 com\pinsoft\internship\recipeshare\repository\RecipeRepository.class
 com\pinsoft\internship\recipeshare\controller\RecipeController.class
+com\pinsoft\internship\recipeshare\dto\CreateRecipeRequest.class
 com\pinsoft\internship\recipeshare\repository\UserRepository.class
 com\pinsoft\internship\recipeshare\entity\Category.class
 com\pinsoft\internship\recipeshare\config\SecurityConfig.class

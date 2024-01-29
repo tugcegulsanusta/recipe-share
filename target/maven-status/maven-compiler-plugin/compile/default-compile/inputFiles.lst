@@ -1,7 +1,9 @@
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\RecipeController.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\config\SecurityConfig.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\CategoryService.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\CreateIngredientRequest.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\CategoryController.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\CreateRecipeRequest.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\CategoryRepository.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\config\JwtAuthenticationFilter.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\JwtService.java
