@@ -33,9 +33,9 @@ public class IngredientsController {
     }
     @DeleteMapping("/ingredients/{id}")
 
-    public void delete(@PathVariable Long id) throws ApiRequestException{ingredientsService.delete(id);}
+    public void delete(@PathVariable Long id) {ingredientsService.delete(id);}
     @PostMapping("/ingredients")
-    public Ingredients add(@RequestBody CreateIngredientRequest ingredientRequest){
-        return ingredientsService.add(ingredientRequest);
+    public void add(@RequestBody CreateIngredientRequest ingredientRequest) {
+        ingredientsService.add(ingredientRequest);
     }
 }

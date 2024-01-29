@@ -8,6 +8,7 @@ import com.pinsoft.internship.recipeshare.exceptions.ApiRequestException;
 import com.pinsoft.internship.recipeshare.repository.CategoryRepository;
 import com.pinsoft.internship.recipeshare.repository.IngredientsRepository;
 import com.pinsoft.internship.recipeshare.repository.RecipeRepository;
+import liquibase.exception.DatabaseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class IngredientsService {
     IngredientsRepository ingredientsRepository;
     @Autowired
     RecipeService recipeService;
-    public Ingredients add(CreateIngredientRequest ingredientRequest) {
+    public void add(CreateIngredientRequest ingredientRequest) {
         Ingredients ingredients = new Ingredients();
         if(ingredientRequest.getName().isEmpty()){
             throw new ApiRequestException("Name cannot be empty!");
@@ -30,8 +31,9 @@ public class IngredientsService {
             ingredients.setName(ingredientRequest.getName());
             Recipe recipe = recipeService.getById(ingredientRequest.getRecipe_table_id()).get();
             ingredients.setRecipe(recipe);
-            return ingredientsRepository.save(ingredients);
+            ingredientsRepository.save(ingredients);
         }
+
     }
     public void delete(Long id) {
         if(ingredientsRepository.findById(id).isEmpty()){
