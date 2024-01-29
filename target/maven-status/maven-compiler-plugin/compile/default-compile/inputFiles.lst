@@ -24,9 +24,12 @@ E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\re
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\entity\Ingredients.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\AuthenticationResponse.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\UserRepository.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\exceptions\ApiException.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\RecipeRepository.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\AuthenticationService.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\exceptions\ApiRequestException.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\entity\Category.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\RoleController.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\RoleService.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\IngredientsService.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\exceptions\ApiExceptionHandler.java

@@ -3,6 +3,7 @@ package com.pinsoft.internship.recipeshare.controller;
 import com.pinsoft.internship.recipeshare.dto.CreateIngredientRequest;
 import com.pinsoft.internship.recipeshare.entity.Category;
 import com.pinsoft.internship.recipeshare.entity.Ingredients;
+import com.pinsoft.internship.recipeshare.exceptions.ApiRequestException;
 import com.pinsoft.internship.recipeshare.service.IngredientsService;
 import jakarta.annotation.security.PermitAll;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class IngredientsController {
     }
     @DeleteMapping("/ingredients/{id}")
 
-    public void delete(@PathVariable Long id){ingredientsService.delete(id);}
+    public void delete(@PathVariable Long id) throws ApiRequestException{ingredientsService.delete(id);}
     @PostMapping("/ingredients")
     public Ingredients add(@RequestBody CreateIngredientRequest ingredientRequest){
         return ingredientsService.add(ingredientRequest);

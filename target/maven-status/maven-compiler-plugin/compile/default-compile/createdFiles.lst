@@ -24,6 +24,8 @@ com\pinsoft\internship\recipeshare\config\CorsConfig.class
 com\pinsoft\internship\recipeshare\service\UserService.class
 com\pinsoft\internship\recipeshare\service\AuthenticationService.class
 com\pinsoft\internship\recipeshare\service\IngredientsService.class
+com\pinsoft\internship\recipeshare\exceptions\ApiException.class
+com\pinsoft\internship\recipeshare\exceptions\ApiExceptionHandler.class
 com\pinsoft\internship\recipeshare\repository\RoleRepository.class
 com\pinsoft\internship\recipeshare\service\CategoryService.class
 com\pinsoft\internship\recipeshare\config\JwtAuthenticationFilter.class
@@ -31,6 +33,7 @@ com\pinsoft\internship\recipeshare\entity\Recipe.class
 com\pinsoft\internship\recipeshare\entity\Role.class
 com\pinsoft\internship\recipeshare\dto\RegisterRequest.class
 com\pinsoft\internship\recipeshare\entity\Ingredients.class
+com\pinsoft\internship\recipeshare\exceptions\ApiRequestException.class
 com\pinsoft\internship\recipeshare\service\RecipeService.class
 com\pinsoft\internship\recipeshare\controller\CategoryController.class
 com\pinsoft\internship\recipeshare\dto\RegisterRequest$RegisterRequestBuilder.class

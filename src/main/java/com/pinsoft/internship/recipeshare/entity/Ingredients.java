@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 @Table(name= "ingredients")
 public class Ingredients {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "recipe_id",referencedColumnName = "id")
+    @JoinColumn(name = "recipe_table_id",referencedColumnName = "id")
     private Recipe recipe;
 
 }

@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateIngredientRequest {
     private String name;
-    private Long recipeId;
+    private Long recipe_table_id;
 }
