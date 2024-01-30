@@ -21,6 +21,7 @@ public class Recipe {
     private Long id;
     private String name;
     private String explanation;
+    private String base64img;
 
     @ManyToOne
     @JoinColumn(name = "category_id",referencedColumnName = "id")

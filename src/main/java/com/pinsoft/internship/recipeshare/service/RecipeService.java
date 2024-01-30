@@ -27,6 +27,7 @@ public class RecipeService {
             recipe.setExplanation(recipeRequest.getExplanation());
             Category category = categoryService.getById(recipeRequest.getCategoryId()).get();
             recipe.setCategory(category);
+            recipe.setBase64img(recipeRequest.getBase64img());
             return recipeRepository.save(recipe);
         }
 

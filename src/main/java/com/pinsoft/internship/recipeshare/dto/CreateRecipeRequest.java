@@ -11,4 +11,5 @@ public class CreateRecipeRequest {
     private String name;
     private String explanation;
     private Long categoryId;
+    private String base64img;
 }

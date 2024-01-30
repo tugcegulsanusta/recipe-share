@@ -98,6 +98,8 @@
             </column>
             <column name="explanation" type="varchar(250)">
             </column>
+            <column name="base64img" type="text">
+            </column>
             <column name="category_id" type="bigint">
             </column>
         </createTable>
@@ -135,6 +137,24 @@
                                  referencedTableName="user_account"
                                  referencedColumnNames="id" />
         <addAutoIncrement tableName="recipe_rating" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
+    </changeSet>
+    <changeSet id="20240130-insert-category" author="Tuğçe Usta">
+        <insert tableName="category">
+            <column name="id" value="1"/>
+            <column name="name" value="Kahvaltı"/>
+        </insert>
+        <insert tableName="category">
+            <column name="id" value="2"/>
+            <column name="name" value="Ana Yemek"/>
+        </insert>
+        <insert tableName="category">
+            <column name="id" value="3"/>
+            <column name="name" value="Tatlı"/>
+        </insert>
+        <insert tableName="category">
+            <column name="id" value="4"/>
+            <column name="name" value="Salata"/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>
