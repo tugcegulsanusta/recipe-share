@@ -1,7 +1,6 @@
 com\pinsoft\internship\recipeshare\config\CorsConfig$1.class
 com\pinsoft\internship\recipeshare\dto\CreateIngredientRequest.class
-com\pinsoft\internship\recipeshare\repository\IngredientsRepository.class
-com\pinsoft\internship\recipeshare\controller\IngredientsController.class
+com\pinsoft\internship\recipeshare\entity\RecipeRating.class
 com\pinsoft\internship\recipeshare\dto\AuthenticationResponse$AuthenticationResponseBuilder.class
 com\pinsoft\internship\recipeshare\service\JwtService.class
 com\pinsoft\internship\recipeshare\controller\UserController.class
@@ -21,9 +20,10 @@ com\pinsoft\internship\recipeshare\dto\AuthenticationResponse.class
 com\pinsoft\internship\recipeshare\repository\CategoryRepository.class
 com\pinsoft\internship\recipeshare\service\RoleService.class
 com\pinsoft\internship\recipeshare\config\CorsConfig.class
+com\pinsoft\internship\recipeshare\dto\RecipeRatingRequest.class
 com\pinsoft\internship\recipeshare\service\UserService.class
+com\pinsoft\internship\recipeshare\controller\RecipeRatingController.class
 com\pinsoft\internship\recipeshare\service\AuthenticationService.class
-com\pinsoft\internship\recipeshare\service\IngredientsService.class
 com\pinsoft\internship\recipeshare\exceptions\ApiException.class
 com\pinsoft\internship\recipeshare\exceptions\ApiExceptionHandler.class
 com\pinsoft\internship\recipeshare\repository\RoleRepository.class
@@ -31,9 +31,10 @@ com\pinsoft\internship\recipeshare\service\CategoryService.class
 com\pinsoft\internship\recipeshare\config\JwtAuthenticationFilter.class
 com\pinsoft\internship\recipeshare\entity\Recipe.class
 com\pinsoft\internship\recipeshare\entity\Role.class
+com\pinsoft\internship\recipeshare\repository\RecipeRatingRepository.class
 com\pinsoft\internship\recipeshare\dto\RegisterRequest.class
-com\pinsoft\internship\recipeshare\entity\Ingredients.class
 com\pinsoft\internship\recipeshare\exceptions\ApiRequestException.class
+com\pinsoft\internship\recipeshare\service\RecipeRatingService.class
 com\pinsoft\internship\recipeshare\service\RecipeService.class
 com\pinsoft\internship\recipeshare\controller\CategoryController.class
 com\pinsoft\internship\recipeshare\dto\RegisterRequest$RegisterRequestBuilder.class

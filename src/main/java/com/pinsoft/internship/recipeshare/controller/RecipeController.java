@@ -1,9 +1,7 @@
 package com.pinsoft.internship.recipeshare.controller;
 
 import com.pinsoft.internship.recipeshare.dto.CreateRecipeRequest;
-import com.pinsoft.internship.recipeshare.entity.Ingredients;
 import com.pinsoft.internship.recipeshare.entity.Recipe;
-import com.pinsoft.internship.recipeshare.service.IngredientsService;
 import com.pinsoft.internship.recipeshare.service.RecipeService;
 import jakarta.annotation.security.PermitAll;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -108,25 +108,33 @@
                                  referencedColumnNames="id" />
         <addAutoIncrement tableName="recipe_table" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
     </changeSet>
-
-    <changeSet id="20240126-create-ingredients" author="Tuğçe Usta">
-       <createTable schemaName="public" tableName="ingredients">
-           <column name="id" type="bigint">
-               <constraints primaryKey="true" primaryKeyName="pk_ingredients_id"/>
-           </column>
-           <column name="name" type="varchar(250)">
-           </column>
-           <column name="recipe_table_id" type="bigint">
-           </column>
-       </createTable>
+    <changeSet id="20240130-create-recipe_rating-table" author="Tuğçe Usta">
+        <createTable schemaName="public" tableName="recipe_rating">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="pk_recipe_rating_id" />
+            </column>
+            <column name="comment" type="varchar(250)">
+            </column>
+            <column name="base64img" type="text">
+            </column>
+            <column name="rating" type="smallint">
+            </column>
+            <column name="recipe_table_id" type="bigint">
+            </column>
+            <column name="user_account_id" type="bigint">
+            </column>
+        </createTable>
         <addForeignKeyConstraint baseColumnNames="recipe_table_id"
-                                 constraintName="fk_ingredients_recipe_table"
-                                 baseTableName="ingredients"
+                                 constraintName="fk_recipe_rating_recipe_table"
+                                 baseTableName="recipe_rating"
                                  referencedTableName="recipe_table"
                                  referencedColumnNames="id" />
-        <addAutoIncrement tableName="ingredients" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1"/>
+        <addForeignKeyConstraint baseColumnNames="user_account_id"
+                                 constraintName="fk_recipe_rating_user_account"
+                                 baseTableName="recipe_rating"
+                                 referencedTableName="user_account"
+                                 referencedColumnNames="id" />
+        <addAutoIncrement tableName="recipe_rating" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
     </changeSet>
-
-
 
 </databaseChangeLog>

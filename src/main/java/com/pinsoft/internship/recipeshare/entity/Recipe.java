@@ -22,11 +22,11 @@ public class Recipe {
     private String name;
     private String explanation;
 
-    @OneToMany(mappedBy = "id")
-    @JsonIgnore
-    private Set <Ingredients> ingredients;
-
     @ManyToOne
     @JoinColumn(name = "category_id",referencedColumnName = "id")
     private Category category;
+
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set <RecipeRating> recipeRating;
 }

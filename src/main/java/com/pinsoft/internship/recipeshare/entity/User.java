@@ -1,5 +1,6 @@
 package com.pinsoft.internship.recipeshare.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -27,6 +29,11 @@ public class User implements UserDetails {
     @ManyToOne
     @JoinColumn(name = "role_id",referencedColumnName = "id")
     private Role role;
+
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set <RecipeRating> recipeRating;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
