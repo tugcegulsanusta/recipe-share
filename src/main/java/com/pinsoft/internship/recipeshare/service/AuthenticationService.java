@@ -5,6 +5,7 @@ import com.pinsoft.internship.recipeshare.dto.AuthenticationResponse;
 import com.pinsoft.internship.recipeshare.dto.RegisterRequest;
 import com.pinsoft.internship.recipeshare.entity.Role;
 import com.pinsoft.internship.recipeshare.entity.User;
+import com.pinsoft.internship.recipeshare.exceptions.ApiRequestException;
 import com.pinsoft.internship.recipeshare.repository.RoleRepository;
 import com.pinsoft.internship.recipeshare.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,17 +27,20 @@ public class AuthenticationService {
 
     public AuthenticationResponse register(RegisterRequest request) {
         User user = new User();
-        user.setUsername(request.getUsername());
-        user.setEmail(request.getEmail());
-        user.setPassword(request.getPassword());
-        Role role = roleRepository.findByNameEquals("user").get(0);
-        user.setRole(role);
-        User savedUser = userRepository.save(user);
-        var jwtToken = jwtService.generateToken(savedUser);
-        return AuthenticationResponse.builder()
-                .token(jwtToken).build();
+        if(request.getUsername().isEmpty()||request.getEmail().isEmpty()){
+            throw new ApiRequestException("username/email cannot be empty!");
+        }else{
+            user.setUsername(request.getUsername());
+            user.setEmail(request.getEmail());
+            user.setPassword(request.getPassword());
+            Role role = roleRepository.findByNameEquals("user").get(0);
+            user.setRole(role);
+            User savedUser = userRepository.save(user);
+            var jwtToken = jwtService.generateToken(savedUser);
+            return AuthenticationResponse.builder()
+                    .token(jwtToken).build();
+        }
     }
-
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         authManager.authenticate(
                 new UsernamePasswordAuthenticationToken(

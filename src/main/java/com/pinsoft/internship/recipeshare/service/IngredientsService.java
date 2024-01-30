@@ -47,7 +47,7 @@ public class IngredientsService {
     }
     public Optional<Ingredients> getById(Long id){
         if(ingredientsRepository.findById(id).isEmpty()){
-            throw new ApiRequestException("The given id is not existed");
+            throw new ApiRequestException("The given id is not exist!");
         }else{
             return ingredientsRepository.findById(id);
         }
