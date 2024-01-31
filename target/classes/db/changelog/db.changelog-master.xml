@@ -102,7 +102,7 @@
             </column>
             <column name="category_id" type="bigint">
             </column>
-            <column name="ingredients" type="text []">
+            <column name="ingredients" type="text">
             </column>
             <column name="createdBy" type="varchar(250)">
             </column>
@@ -163,5 +163,4 @@
             <column name="name" value="Salata"/>
         </insert>
     </changeSet>
-
 </databaseChangeLog>

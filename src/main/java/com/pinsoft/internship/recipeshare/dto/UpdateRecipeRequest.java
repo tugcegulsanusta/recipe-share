@@ -13,6 +13,6 @@ public class UpdateRecipeRequest {
     private String explanation;
     private Long categoryId;
     private String base64img;
-    private String[] ingredients;
+    private String ingredients;
     private Long userId;
 }

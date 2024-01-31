@@ -9,6 +9,7 @@ import com.pinsoft.internship.recipeshare.exceptions.ApiRequestException;
 import com.pinsoft.internship.recipeshare.repository.RoleRepository;
 import com.pinsoft.internship.recipeshare.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
-
+    @Autowired
     private final UserRepository userRepository;
 
     private final RoleRepository roleRepository;
