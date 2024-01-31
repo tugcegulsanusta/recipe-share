@@ -14,6 +14,7 @@ com\pinsoft\internship\recipeshare\controller\RecipeController.class
 com\pinsoft\internship\recipeshare\dto\CreateRecipeRequest.class
 com\pinsoft\internship\recipeshare\repository\UserRepository.class
 com\pinsoft\internship\recipeshare\entity\Category.class
+com\pinsoft\internship\recipeshare\dto\UpdateRecipeRequest.class
 com\pinsoft\internship\recipeshare\config\SecurityConfig.class
 com\pinsoft\internship\recipeshare\config\ApplicationConfig.class
 com\pinsoft\internship\recipeshare\dto\AuthenticationResponse.class

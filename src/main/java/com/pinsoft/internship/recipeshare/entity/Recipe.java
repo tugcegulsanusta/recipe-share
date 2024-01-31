@@ -1,13 +1,13 @@
 package com.pinsoft.internship.recipeshare.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.vladmihalcea.hibernate.type.array.StringArrayType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.mapping.List;
+import org.hibernate.annotations.Type;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 @Entity
@@ -22,6 +22,10 @@ public class Recipe {
     private String name;
     private String explanation;
     private String base64img;
+    private String createdBy;
+    @Type(StringArrayType.class)
+    @Column(name = "ingredients", columnDefinition = "text[]")
+    private String[] ingredients;
 
     @ManyToOne
     @JoinColumn(name = "category_id",referencedColumnName = "id")

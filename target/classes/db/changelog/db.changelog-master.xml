@@ -96,11 +96,15 @@
             <column name="name" type="varchar(250)">
                 <constraints unique="true" uniqueConstraintName="name_unq" />
             </column>
-            <column name="explanation" type="varchar(250)">
+            <column name="explanation" type="varchar(1000)">
             </column>
             <column name="base64img" type="text">
             </column>
             <column name="category_id" type="bigint">
+            </column>
+            <column name="ingredients" type="text []">
+            </column>
+            <column name="createdBy" type="varchar(250)">
             </column>
         </createTable>
         <addForeignKeyConstraint baseColumnNames="category_id"
@@ -125,6 +129,9 @@
             </column>
             <column name="user_account_id" type="bigint">
             </column>
+            <column name="createdBy" type="varchar(250)">
+            </column>
+
         </createTable>
         <addForeignKeyConstraint baseColumnNames="recipe_table_id"
                                  constraintName="fk_recipe_rating_recipe_table"

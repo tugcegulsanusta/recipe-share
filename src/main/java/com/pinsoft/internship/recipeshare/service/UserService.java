@@ -13,7 +13,6 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     UserRepository userRepository;
-
     public void delete(Long id) {
         if (userRepository.findById(id).isEmpty()) {
             throw new ApiRequestException("The given id is not exist!");

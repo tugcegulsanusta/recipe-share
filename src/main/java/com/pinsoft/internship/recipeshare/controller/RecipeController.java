@@ -1,6 +1,7 @@
 package com.pinsoft.internship.recipeshare.controller;
 
 import com.pinsoft.internship.recipeshare.dto.CreateRecipeRequest;
+import com.pinsoft.internship.recipeshare.dto.UpdateRecipeRequest;
 import com.pinsoft.internship.recipeshare.entity.Recipe;
 import com.pinsoft.internship.recipeshare.service.RecipeService;
 import jakarta.annotation.security.PermitAll;
@@ -36,5 +37,10 @@ public class RecipeController {
     @PostMapping("/recipe")
     public Recipe add(@RequestBody CreateRecipeRequest recipeRequest){
         return recipeService.add(recipeRequest);
+    }
+
+    @PutMapping("/recipe/{id}")
+    public void update(@RequestBody UpdateRecipeRequest recipeRequest){
+        recipeService.update(recipeRequest);
     }
 }

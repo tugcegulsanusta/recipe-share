@@ -30,6 +30,7 @@ public class RecipeRatingService {
         recipeRating.setRecipe(recipe);
         User user = userService.getById(recipeRatingRequest.getUserId()).get();
         recipeRating.setUser(user);
+        recipeRating.setCreatedBy(user.getUsername());
         return recipeRatingRepository.save(recipeRating);
     }
     public void delete(Long id) {

@@ -18,11 +18,10 @@ public class RecipeRating {
     private String comment;
     private String base64img;
     private int rating;
-    //private String createdBy;
+    private String createdBy;
     @ManyToOne
     @JoinColumn(name = "user_account_id",referencedColumnName = "id")
     private User user;
-
     @ManyToOne
     @JoinColumn(name = "recipe_table_id", referencedColumnName = "id")
     private Recipe recipe;
