@@ -20,7 +20,20 @@ public class UserService {
             userRepository.findById(id);
         }
     }
-
+    public void inactivate(Long id){
+        if(userRepository.findById(id).isEmpty()){
+            throw new ApiRequestException("The given id is not exist");
+        }else {
+           userRepository.findById(id).get().setAccountActive(false);
+        }
+    }
+    public void activate(Long id){
+        if(userRepository.findById(id).isEmpty()){
+            throw new ApiRequestException("The given id is not exist");
+        }else {
+            userRepository.findById(id).get().setAccountActive(true);
+        }
+    }
     public List<User> getAll() {
         return userRepository.findAll();
     }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class RecipeRatingService {
@@ -39,9 +40,9 @@ public class RecipeRatingService {
         }else{
             recipeRatingRepository.deleteById(id);
         }
-
     }
-   public Optional<RecipeRating> getById(Long id) {
-        return recipeRatingRepository.findById(id);
+   public List<RecipeRating> getById(Long id) {
+
+       return  recipeRatingRepository.findAllByRecipeId(id);
    }
 }

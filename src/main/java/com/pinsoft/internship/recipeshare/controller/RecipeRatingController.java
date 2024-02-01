@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 public class RecipeRatingController {
@@ -23,14 +25,8 @@ public class RecipeRatingController {
 
     @GetMapping("/reciperating/{id}")
     @PermitAll
-    public RecipeRating get(@PathVariable Long id){
-        Optional<RecipeRating> optional = recipeRatingService.getById(id);
-
-        if(optional.isPresent()){
-            return optional.get();
-        }else{
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
+    public List<RecipeRating> get(@PathVariable Long id){
+        return recipeRatingService.getById(id);
     }
 
     @DeleteMapping("/reciperating/{id}")

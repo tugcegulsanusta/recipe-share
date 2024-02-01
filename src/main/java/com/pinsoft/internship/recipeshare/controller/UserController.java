@@ -50,4 +50,22 @@ public class UserController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
+    @PostMapping("/inactivate/{id}")
+    public void inactivate(@PathVariable Long id){
+        Optional<User> optional = userService.getById(id);
+        if(optional.isPresent()){
+            userService.inactivate(id);
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+    @PostMapping("/activate/{id}")
+    public void activate(@PathVariable Long id){
+        Optional<User> optional = userService.getById(id);
+        if(optional.isPresent()){
+            userService.activate(id);
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
 }

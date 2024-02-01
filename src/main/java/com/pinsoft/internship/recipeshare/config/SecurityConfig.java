@@ -30,7 +30,7 @@ public class SecurityConfig {
                 .permitAll()
                 .requestMatchers(HttpMethod.DELETE).hasAuthority("admin")
                 //.requestMatchers(HttpMethod.POST).hasAuthority("admin")
-                .requestMatchers(HttpMethod.PUT).hasAuthority("admin")
+                //.requestMatchers(HttpMethod.PUT).hasAuthority("admin")
                 .anyRequest()
                 .authenticated()
                 .and()

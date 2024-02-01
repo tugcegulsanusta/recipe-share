@@ -31,7 +31,10 @@
             </column>
             <column name="password" type="varchar(250)">
             </column>
+            <column name="is_account_active" type = "boolean">
+            </column>
         </createTable>
+        <addDefaultValue tableName="user_account" columnName="is_account_active" defaultValueBoolean="true"/>
         <addForeignKeyConstraint  baseColumnNames="role_id"
                                   constraintName="fk_user_account_role"
                                   baseTableName="user_account"
