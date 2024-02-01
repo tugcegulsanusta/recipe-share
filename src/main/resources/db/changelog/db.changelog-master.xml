@@ -104,7 +104,7 @@
             </column>
             <column name="category_id" type="bigint">
             </column>
-            <column name="createdBy" type="varchar(250)">
+            <column name="created_by" type="varchar(250)">
             </column>
         </createTable>
         <addForeignKeyConstraint baseColumnNames="category_id"
@@ -179,5 +179,6 @@
                                  baseTableName="ingredient"
                                  referencedTableName="recipe_table"
                                  referencedColumnNames="id" />
+        <addAutoIncrement tableName="ingredient" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
     </changeSet>
 </databaseChangeLog>

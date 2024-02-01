@@ -1,11 +1,10 @@
 package com.pinsoft.internship.recipeshare.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,5 +17,7 @@ public class Ingredient {
     @ManyToOne
     @JoinColumn(name = "recipe_table_id",referencedColumnName = "id")
     private Recipe recipe;
+
+
 
 }

@@ -36,10 +36,13 @@ public class RecipeService {
             Category category = categoryService.getById(recipeRequest.getCategoryId()).get();
             recipe.setCategory(category);
             recipe.setBase64img(recipeRequest.getBase64img());
+            recipe.setCreatedBy(recipeRequest.getCreatedBy());
+            recipe = recipeRepository.save(recipe);
             //Ingredient set
             Set<Ingredient> ingredients = new HashSet<>();
-            for(String newIngredient : recipeRequest.getIngredients()){
-                Ingredient savedIngredients = ingredientRepository.save(new Ingredient(null, newIngredient, recipe));
+            for(String ingredientName : recipeRequest.getIngredients()){
+                Ingredient ingredient = new Ingredient(null, ingredientName, recipe);
+                Ingredient savedIngredients = ingredientRepository.save(ingredient);
                 ingredients.add(savedIngredients);
             }
             recipe.setIngredients(ingredients);
