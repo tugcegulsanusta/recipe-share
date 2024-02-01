@@ -130,7 +130,7 @@
             </column>
             <column name="user_account_id" type="bigint">
             </column>
-            <column name="createdBy" type="varchar(250)">
+            <column name="created_by" type="varchar(250)">
             </column>
         </createTable>
         <addForeignKeyConstraint baseColumnNames="recipe_table_id"

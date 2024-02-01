@@ -69,6 +69,7 @@ public class RecipeService {
     public void update(UpdateRecipeRequest updateRecipeRequest) {
         Optional<Recipe> recipeRequest=recipeRepository.findById(updateRecipeRequest.getId());
         if(recipeRequest.isPresent()){
+            delete(updateRecipeRequest.getId());
             Recipe recipe = new Recipe();
             recipe.setId(updateRecipeRequest.getId());
             recipe.setName(updateRecipeRequest.getName());
@@ -79,6 +80,8 @@ public class RecipeService {
             recipe.setCreatedBy(user.getUsername());
             recipe.setCategory(category);
             recipeRepository.save(recipe);
+        }else{
+            throw new ApiRequestException("The given id is not exist!");
         }
     }
 
