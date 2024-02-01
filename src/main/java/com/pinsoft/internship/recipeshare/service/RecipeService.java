@@ -3,16 +3,17 @@ package com.pinsoft.internship.recipeshare.service;
 import com.pinsoft.internship.recipeshare.dto.CreateRecipeRequest;
 import com.pinsoft.internship.recipeshare.dto.UpdateRecipeRequest;
 import com.pinsoft.internship.recipeshare.entity.Category;
+import com.pinsoft.internship.recipeshare.entity.Ingredient;
 import com.pinsoft.internship.recipeshare.entity.Recipe;
 import com.pinsoft.internship.recipeshare.entity.User;
 import com.pinsoft.internship.recipeshare.exceptions.ApiRequestException;
+import com.pinsoft.internship.recipeshare.repository.IngredientRepository;
 import com.pinsoft.internship.recipeshare.repository.RecipeRepository;
 import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class RecipeService {
@@ -22,6 +23,8 @@ public class RecipeService {
     CategoryService categoryService;
     @Autowired
     UserService userService;
+    @Autowired
+    IngredientRepository ingredientRepository;
     public Recipe add(CreateRecipeRequest recipeRequest) {
         Recipe recipe = new Recipe();
         if(recipeRequest.getName().isEmpty()){
@@ -29,10 +32,17 @@ public class RecipeService {
         }else{
             recipe.setName(recipeRequest.getName());
             recipe.setExplanation(recipeRequest.getExplanation());
+            //Category set
             Category category = categoryService.getById(recipeRequest.getCategoryId()).get();
             recipe.setCategory(category);
             recipe.setBase64img(recipeRequest.getBase64img());
-            recipe.setIngredients(recipeRequest.getIngredients());
+            //Ingredient set
+            Set<Ingredient> ingredients = new HashSet<>();
+            for(String newIngredient : recipeRequest.getIngredients()){
+                Ingredient savedIngredients = ingredientRepository.save(new Ingredient(null, newIngredient, recipe));
+                ingredients.add(savedIngredients);
+            }
+            recipe.setIngredients(ingredients);
             return recipeRepository.save(recipe);
         }
     }
@@ -61,7 +71,6 @@ public class RecipeService {
             recipe.setName(updateRecipeRequest.getName());
             recipe.setExplanation(updateRecipeRequest.getExplanation());
             recipe.setBase64img(updateRecipeRequest.getBase64img());
-            recipe.setIngredients(updateRecipeRequest.getIngredients());
             Category category = categoryService.getById(updateRecipeRequest.getCategoryId()).get();
             User user = userService.getById(updateRecipeRequest.getUserId()).get();
             recipe.setCreatedBy(user.getUsername());

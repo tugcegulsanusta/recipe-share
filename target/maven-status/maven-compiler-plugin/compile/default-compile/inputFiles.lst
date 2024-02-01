@@ -8,6 +8,7 @@ E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\re
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\RecipeRatingRepository.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\CreateRecipeRequest.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\CategoryRepository.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\IngredientService.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\config\JwtAuthenticationFilter.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\JwtService.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\RecipeService.java
@@ -18,7 +19,10 @@ E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\re
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\UserController.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\entity\Role.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\entity\Recipe.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\entity\Ingredient.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\entity\User.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\IngredientController.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\IngredientRepository.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\config\ApplicationConfig.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\RoleRepository.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\RecipeShareApplication.java

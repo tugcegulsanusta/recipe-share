@@ -21,7 +21,6 @@ public class Recipe {
     private String explanation;
     private String base64img;
     private String createdBy;
-    private String ingredients;
 
     @ManyToOne
     @JoinColumn(name = "category_id",referencedColumnName = "id")
@@ -30,4 +29,8 @@ public class Recipe {
     @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set <RecipeRating> recipeRating;
+
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set <Ingredient> ingredients;
 }
