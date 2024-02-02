@@ -7,6 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -29,8 +30,8 @@ public class SecurityConfig {
                 .requestMatchers("/swagger-ui/**","/v3/api-docs/**","/register","/authenticate","/**")
                 .permitAll()
                 .requestMatchers(HttpMethod.DELETE).hasAuthority("admin")
-                //.requestMatchers(HttpMethod.POST).hasAuthority("admin")
-                //.requestMatchers(HttpMethod.PUT).hasAuthority("admin")
+                .requestMatchers(HttpMethod.POST).hasAuthority("admin , user")
+                .requestMatchers(HttpMethod.PUT).hasAuthority("admin, user")
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -41,4 +42,5 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
+
 }

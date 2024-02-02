@@ -4,23 +4,23 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    
+
     <changeSet id="20240124-create-role" author="Tuğçe Usta">
         <createTable schemaName="public" tableName="role">
             <column name="id" type="bigint">
-                <constraints primaryKey="true" primaryKeyName="pk_role_id" />
+                <constraints primaryKey="true" primaryKeyName="pk_role_id"/>
             </column>
             <column name="name" type="varchar(250)">
-                <constraints unique="true" />
+                <constraints unique="true"/>
             </column>
         </createTable>
-        <addAutoIncrement tableName="role" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
+        <addAutoIncrement tableName="role" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1"/>
     </changeSet>
 
     <changeSet id="20240124-create-user_account" author="Tuğçe Usta">
         <createTable schemaName="public" tableName="user_account">
             <column name="id" type="bigint">
-                <constraints primaryKey="true" primaryKeyName="pk_user_account_id" />
+                <constraints primaryKey="true" primaryKeyName="pk_user_account_id"/>
             </column>
             <column name="email" type="varchar(250)">
                 <constraints unique="true"/>
@@ -31,19 +31,20 @@
             </column>
             <column name="password" type="varchar(250)">
             </column>
-            <column name="is_account_active" type = "boolean">
+            <column name="is_account_active" type="boolean">
             </column>
         </createTable>
         <addDefaultValue tableName="user_account" columnName="is_account_active" defaultValueBoolean="true"/>
-        <addForeignKeyConstraint  baseColumnNames="role_id"
-                                  constraintName="fk_user_account_role"
-                                  baseTableName="user_account"
-                                  referencedColumnNames="id"
-                                  referencedTableName="role"
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 constraintName="fk_user_account_role"
+                                 baseTableName="user_account"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role"
         />
-        <addAutoIncrement tableName="user_account" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
+        <addAutoIncrement tableName="user_account" columnName="id" columnDataType="bigint" startWith="100"
+                          incrementBy="1"/>
     </changeSet>
-    
+
     <changeSet id="20240125-insert-role" author="Tuğçe Usta">
         <insert tableName="role">
             <column name="id" value="1"/>
@@ -75,7 +76,7 @@
     <changeSet id="20240125/2-insert-user_account" author="Tuğçe Usta">
         <insert tableName="user_account">
             <column name="id" value="3"/>
-            <column name="email" value="user@user.com" />
+            <column name="email" value="user@user.com"/>
             <column name="username" value="user"/>
             <column name="role_id" value="2"/>
             <column name="password" value="user"/>
@@ -90,16 +91,16 @@
             <column name="name" type="varchar(250)">
             </column>
         </createTable>
-        <addAutoIncrement tableName="category" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
+        <addAutoIncrement tableName="category" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1"/>
     </changeSet>
 
     <changeSet id="20240126-create-recipe-table" author="Tuğçe Usta">
         <createTable schemaName="public" tableName="recipe_table">
             <column name="id" type="bigint">
-                <constraints primaryKey="true" primaryKeyName="pk_recipe_table_id" />
+                <constraints primaryKey="true" primaryKeyName="pk_recipe_table_id"/>
             </column>
             <column name="name" type="varchar(250)">
-                <constraints unique="true" uniqueConstraintName="name_unq" />
+                <constraints unique="true" uniqueConstraintName="name_unq"/>
             </column>
             <column name="explanation" type="varchar(1000)">
             </column>
@@ -114,14 +115,15 @@
                                  constraintName="fk_recipe_table_category"
                                  baseTableName="recipe_table"
                                  referencedTableName="category"
-                                 referencedColumnNames="id" />
-        <addAutoIncrement tableName="recipe_table" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
+                                 referencedColumnNames="id"/>
+        <addAutoIncrement tableName="recipe_table" columnName="id" columnDataType="bigint" startWith="100"
+                          incrementBy="1"/>
     </changeSet>
 
     <changeSet id="20240130-create-recipe_rating-table" author="Tuğçe Usta">
         <createTable schemaName="public" tableName="recipe_rating">
             <column name="id" type="bigint">
-                <constraints primaryKey="true" primaryKeyName="pk_recipe_rating_id" />
+                <constraints primaryKey="true" primaryKeyName="pk_recipe_rating_id"/>
             </column>
             <column name="comment" type="varchar(250)">
             </column>
@@ -140,13 +142,14 @@
                                  constraintName="fk_recipe_rating_recipe_table"
                                  baseTableName="recipe_rating"
                                  referencedTableName="recipe_table"
-                                 referencedColumnNames="id" />
+                                 referencedColumnNames="id"/>
         <addForeignKeyConstraint baseColumnNames="user_account_id"
                                  constraintName="fk_recipe_rating_user_account"
                                  baseTableName="recipe_rating"
                                  referencedTableName="user_account"
-                                 referencedColumnNames="id" />
-        <addAutoIncrement tableName="recipe_rating" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
+                                 referencedColumnNames="id"/>
+        <addAutoIncrement tableName="recipe_rating" columnName="id" columnDataType="bigint" startWith="100"
+                          incrementBy="1"/>
     </changeSet>
 
     <changeSet id="20240130-insert-category" author="Tuğçe Usta">
@@ -181,7 +184,8 @@
                                  constraintName="fk_ingredient_recipe_table"
                                  baseTableName="ingredient"
                                  referencedTableName="recipe_table"
-                                 referencedColumnNames="id" />
-        <addAutoIncrement tableName="ingredient" columnName="id" columnDataType="bigint" startWith="100" incrementBy="1" />
+                                 referencedColumnNames="id"/>
+        <addAutoIncrement tableName="ingredient" columnName="id" columnDataType="bigint" startWith="100"
+                          incrementBy="1"/>
     </changeSet>
 </databaseChangeLog>

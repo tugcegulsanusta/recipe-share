@@ -4,6 +4,7 @@ E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\re
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\RecipeRatingService.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\CategoryService.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\CreateIngredientRequest.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\config\MethodSecurityConfig.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\CategoryController.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\repository\RecipeRatingRepository.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\CreateRecipeRequest.java
@@ -38,4 +39,5 @@ E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\re
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\entity\Category.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\controller\RoleController.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\service\RoleService.java
+E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\dto\CreateCategoryRequest.java
 E:\DEVELOPMENT\Tugce_Github\recipe-share\src\main\java\com\pinsoft\internship\recipeshare\exceptions\ApiExceptionHandler.java

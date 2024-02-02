@@ -10,6 +10,7 @@ import com.pinsoft.internship.recipeshare.service.RecipeService;
 import jakarta.annotation.security.PermitAll;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -28,7 +29,6 @@ public class RecipeRatingController {
     public List<RecipeRating> get(@PathVariable Long id){
         return recipeRatingService.getById(id);
     }
-
     @DeleteMapping("/reciperating/{id}")
     public void delete(@PathVariable Long id){recipeRatingService.delete(id);}
 

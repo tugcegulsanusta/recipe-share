@@ -3,7 +3,10 @@ package com.pinsoft.internship.recipeshare.service;
 import com.pinsoft.internship.recipeshare.entity.User;
 import com.pinsoft.internship.recipeshare.exceptions.ApiRequestException;
 import com.pinsoft.internship.recipeshare.repository.UserRepository;
+import jakarta.annotation.security.RolesAllowed;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +23,7 @@ public class UserService {
             userRepository.findById(id);
         }
     }
+    @PreAuthorize("hasAuthority('admin')")
     public void inactivate(Long id){
         if(userRepository.findById(id).isEmpty()){
             throw new ApiRequestException("The given id is not exist");
@@ -27,6 +31,7 @@ public class UserService {
            userRepository.findById(id).get().setAccountActive(false);
         }
     }
+    @PreAuthorize("hasAuthority('admin')")
     public void activate(Long id){
         if(userRepository.findById(id).isEmpty()){
             throw new ApiRequestException("The given id is not exist");

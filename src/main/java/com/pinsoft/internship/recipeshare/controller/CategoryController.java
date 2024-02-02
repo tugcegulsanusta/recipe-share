@@ -1,5 +1,6 @@
 package com.pinsoft.internship.recipeshare.controller;
 
+import com.pinsoft.internship.recipeshare.dto.CreateCategoryRequest;
 import com.pinsoft.internship.recipeshare.entity.Category;
 import com.pinsoft.internship.recipeshare.service.CategoryService;
 import jakarta.annotation.security.PermitAll;
@@ -29,11 +30,10 @@ public class CategoryController {
         }
     }
     @DeleteMapping("/category/{id}")
-
     public void delete(@PathVariable Long id){categoryService.delete(id);}
     @PostMapping("/category")
-    public Category add(@RequestBody Category category){
-        return categoryService.add(category);
+    public Category add(@RequestBody CreateCategoryRequest categoryRequest){
+        return categoryService.add(categoryRequest);
     }
 
 }
