@@ -5,6 +5,7 @@ import com.pinsoft.internship.recipeshare.dto.UpdateRecipeRequest;
 import com.pinsoft.internship.recipeshare.entity.Recipe;
 import com.pinsoft.internship.recipeshare.service.RecipeService;
 import jakarta.annotation.security.PermitAll;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +19,11 @@ public class RecipeController {
 
     @Autowired
     RecipeService recipeService;
+
     @GetMapping("/recipe")
     @PermitAll
     public Collection<Recipe> get(){return recipeService.getAll();}
+
     @GetMapping("/recipe/{id}")
     @PermitAll
     public Recipe get(@PathVariable Long id){
@@ -31,9 +34,10 @@ public class RecipeController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
+    @Transactional
     @DeleteMapping("/recipe/{id}")
-
     public void delete(@PathVariable Long id){recipeService.delete(id);}
+
     @PostMapping("/recipe")
     public Recipe add(@RequestBody CreateRecipeRequest recipeRequest){
         return recipeService.add(recipeRequest);

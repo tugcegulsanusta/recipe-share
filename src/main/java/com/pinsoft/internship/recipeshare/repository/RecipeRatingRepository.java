@@ -11,4 +11,5 @@ import java.util.Optional;
 @Repository
 public interface RecipeRatingRepository extends JpaRepository <RecipeRating, Long> {
     List <RecipeRating> findAllByRecipeId(Long id);
+    void deleteAllByRecipe_Id(Long id);
 }

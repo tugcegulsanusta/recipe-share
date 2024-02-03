@@ -11,5 +11,6 @@ import java.util.Set;
 @Repository
 public interface IngredientRepository extends JpaRepository <Ingredient, Long> {
     Set<Ingredient> findByRecipe_Id(Long id);
+    void deleteAllByRecipe_Id(Long id);
 
 }

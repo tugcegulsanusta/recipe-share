@@ -23,6 +23,8 @@ public class RecipeService {
     UserService userService;
     @Autowired
     IngredientRepository ingredientRepository;
+    @Autowired
+    RecipeRatingRepository recipeRatingRepository;
 
     public Recipe add(CreateRecipeRequest recipeRequest) {
         Recipe recipe = new Recipe();
@@ -52,6 +54,8 @@ public class RecipeService {
         if(recipeRepository.findById(id).isEmpty()){
             throw new ApiRequestException("Recipe id is not found!");
         }else{
+            ingredientRepository.deleteAllByRecipe_Id(id);
+            recipeRatingRepository.deleteAllByRecipe_Id(id);
             recipeRepository.deleteById(id);
         }
     }
@@ -76,8 +80,14 @@ public class RecipeService {
             User user = userService.getById(updateRecipeRequest.getUserId()).get();
             recipe.setCreatedBy(user.getUsername());
             recipe.setCategory(category);
-            Set<Ingredient> ingredient = ingredientRepository.findByRecipe_Id(updateRecipeRequest.getId());
-            recipe.setIngredients(ingredient);
+            ingredientRepository.deleteAllByRecipe_Id(recipe.getId());
+            Set<Ingredient> ingredients = new HashSet<>();
+            for(String ingredientName : updateRecipeRequest.getIngredients()){
+                Ingredient ingredient = new Ingredient(null, ingredientName, recipe);
+                Ingredient savedIngredients = ingredientRepository.save(ingredient);
+                ingredients.add(savedIngredients);
+            }
+            recipe.setIngredients(ingredients);
             recipeRepository.save(recipe);
 
         }else{
