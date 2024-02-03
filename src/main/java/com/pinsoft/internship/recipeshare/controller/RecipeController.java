@@ -34,7 +34,6 @@ public class RecipeController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
-    @Transactional
     @DeleteMapping("/recipe/{id}")
     public void delete(@PathVariable Long id){recipeService.delete(id);}
 

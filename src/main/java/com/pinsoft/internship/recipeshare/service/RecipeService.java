@@ -10,9 +10,10 @@ import com.pinsoft.internship.recipeshare.repository.RecipeRepository;
 import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
-
+@Transactional
 @Service
 public class RecipeService {
     @Autowired
