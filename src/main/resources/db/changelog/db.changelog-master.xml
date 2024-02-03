@@ -100,7 +100,6 @@
                 <constraints primaryKey="true" primaryKeyName="pk_recipe_table_id"/>
             </column>
             <column name="name" type="varchar(250)">
-                <constraints unique="true" uniqueConstraintName="name_unq"/>
             </column>
             <column name="explanation" type="varchar(1000)">
             </column>

@@ -2,12 +2,10 @@ package com.pinsoft.internship.recipeshare.service;
 
 import com.pinsoft.internship.recipeshare.dto.CreateRecipeRequest;
 import com.pinsoft.internship.recipeshare.dto.UpdateRecipeRequest;
-import com.pinsoft.internship.recipeshare.entity.Category;
-import com.pinsoft.internship.recipeshare.entity.Ingredient;
-import com.pinsoft.internship.recipeshare.entity.Recipe;
-import com.pinsoft.internship.recipeshare.entity.User;
+import com.pinsoft.internship.recipeshare.entity.*;
 import com.pinsoft.internship.recipeshare.exceptions.ApiRequestException;
 import com.pinsoft.internship.recipeshare.repository.IngredientRepository;
+import com.pinsoft.internship.recipeshare.repository.RecipeRatingRepository;
 import com.pinsoft.internship.recipeshare.repository.RecipeRepository;
 import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +23,7 @@ public class RecipeService {
     UserService userService;
     @Autowired
     IngredientRepository ingredientRepository;
+
     public Recipe add(CreateRecipeRequest recipeRequest) {
         Recipe recipe = new Recipe();
         if(recipeRequest.getName().isEmpty()){
@@ -69,9 +68,7 @@ public class RecipeService {
     public void update(UpdateRecipeRequest updateRecipeRequest) {
         Optional<Recipe> recipeRequest=recipeRepository.findById(updateRecipeRequest.getId());
         if(recipeRequest.isPresent()){
-            delete(updateRecipeRequest.getId());
-            Recipe recipe = new Recipe();
-            recipe.setId(updateRecipeRequest.getId());
+            Recipe recipe = recipeRepository.getById(updateRecipeRequest.getId());
             recipe.setName(updateRecipeRequest.getName());
             recipe.setExplanation(updateRecipeRequest.getExplanation());
             recipe.setBase64img(updateRecipeRequest.getBase64img());
@@ -79,7 +76,10 @@ public class RecipeService {
             User user = userService.getById(updateRecipeRequest.getUserId()).get();
             recipe.setCreatedBy(user.getUsername());
             recipe.setCategory(category);
+            Set<Ingredient> ingredient = ingredientRepository.findByRecipe_Id(updateRecipeRequest.getId());
+            recipe.setIngredients(ingredient);
             recipeRepository.save(recipe);
+
         }else{
             throw new ApiRequestException("The given id is not exist!");
         }
