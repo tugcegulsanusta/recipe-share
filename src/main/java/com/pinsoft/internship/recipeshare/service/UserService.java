@@ -28,7 +28,9 @@ public class UserService {
         if(userRepository.findById(id).isEmpty()){
             throw new ApiRequestException("The given id is not exist");
         }else {
-           userRepository.findById(id).get().setAccountActive(false);
+           User user = userRepository.findById(id).get();
+           user.setAccountActive(false);
+           userRepository.save(user);
         }
     }
     @PreAuthorize("hasAuthority('admin')")
@@ -36,7 +38,9 @@ public class UserService {
         if(userRepository.findById(id).isEmpty()){
             throw new ApiRequestException("The given id is not exist");
         }else {
-            userRepository.findById(id).get().setAccountActive(true);
+            User user = userRepository.findById(id).get();
+            user.setAccountActive(true);
+            userRepository.save(user);
         }
     }
     public List<User> getAll() {
