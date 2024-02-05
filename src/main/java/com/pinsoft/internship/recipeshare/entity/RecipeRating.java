@@ -23,7 +23,7 @@ public class RecipeRating {
     @JoinColumn(name = "user_account_id",referencedColumnName = "id")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "recipe_table_id", referencedColumnName = "id")
+    @JoinColumn(name = "recipe_table_id")
     private Recipe recipe;
 
 }

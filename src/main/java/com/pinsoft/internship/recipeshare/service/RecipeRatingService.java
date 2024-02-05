@@ -43,6 +43,16 @@ public class RecipeRatingService {
     }
    public List<RecipeRating> getById(Long id) {
 
-       return  recipeRatingRepository.findAllByRecipeId(id);
+       return recipeRatingRepository.findAllByRecipeId(id);
+   }
+
+   public int[] ratings(Long id) {
+        List<RecipeRating> recipeRatings = recipeRatingRepository.findAllByRecipeId(id);
+        int[] ratings = new int[recipeRatings.size()];
+        for(int i=0; i<recipeRatings.size();i++){
+            ratings[i] = recipeRatings.get(i).getRating();
+
+        };
+      return ratings;
    }
 }

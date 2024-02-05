@@ -67,6 +67,7 @@ public class RecipeService {
         if(recipeRepository.findById(id).isEmpty()){
             throw new ApiRequestException("The given id is not exist!");
         }else{
+            System.out.println(recipeRepository.findById(id).get().getRecipeRating().size());
             return recipeRepository.findById(id);
         }
     }

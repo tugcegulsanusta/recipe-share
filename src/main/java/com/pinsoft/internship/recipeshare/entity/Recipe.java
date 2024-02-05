@@ -25,7 +25,7 @@ public class Recipe {
     @JoinColumn(name = "category_id",referencedColumnName = "id")
     private Category category;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "recipe")
     @JsonIgnore
     private Set <RecipeRating> recipeRating;
 

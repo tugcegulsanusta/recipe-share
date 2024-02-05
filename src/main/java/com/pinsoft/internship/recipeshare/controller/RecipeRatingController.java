@@ -36,5 +36,9 @@ public class RecipeRatingController {
     public RecipeRating add(@RequestBody RecipeRatingRequest recipeRatingRequest){
         return recipeRatingService.add(recipeRatingRequest);
     }
+    @GetMapping("/ratings/{id}")
+    public int[] ratings(@PathVariable Long id){
+        return recipeRatingService.ratings(id);
+    }
 
 }
