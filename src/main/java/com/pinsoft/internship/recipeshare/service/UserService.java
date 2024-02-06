@@ -16,6 +16,7 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     UserRepository userRepository;
+    @PreAuthorize("hasAuthority('admin')")
     public void delete(Long id) {
         if (userRepository.findById(id).isEmpty()) {
             throw new ApiRequestException("The given id is not exist!");
@@ -43,10 +44,11 @@ public class UserService {
             userRepository.save(user);
         }
     }
+    @PreAuthorize("hasAuthority('admin')")
     public List<User> getAll() {
         return userRepository.findAll();
     }
-
+    @PreAuthorize("hasAuthority('admin')")
     public Optional<User> getById(Long id) {
         if (userRepository.findById(id).isEmpty()) {
             throw new ApiRequestException("The given id is not exist!");
